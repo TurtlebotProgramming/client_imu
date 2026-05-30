@@ -1,0 +1,8 @@
+client_imu:
+  ros__parameters:
+    input_topic: "/imu"
+    output_topic: "/client_imu/imu_value"
+    publish_hz: 25.0
+    angle_unit: "degree"
+    stale_timeout_sec: 0.5
+    yaw_display_mode: "signed"

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>920</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>client_imu</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="titleLabel">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>client_imu IMU Monitor</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="statusLabel">
+      <property name="text">
+       <string>No IMU data</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="topLayout">
+      <item stretch="2">
+       <widget class="QGroupBox" name="valuesGroupBox">
+        <property name="title">
+         <string>Values</string>
+        </property>
+        <layout class="QVBoxLayout" name="valuesLayout">
+         <item>
+          <widget class="QGroupBox" name="rawGroupBox">
+           <property name="title">
+            <string>Raw RPY</string>
+           </property>
+           <layout class="QFormLayout" name="rawFormLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="rawRollLabel">
+              <property name="text">
+               <string>Roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="rawRollValueLabel">
+              <property name="text">
+               <string>No IMU data</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="rawPitchLabel">
+              <property name="text">
+               <string>Pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="rawPitchValueLabel">
+              <property name="text">
+               <string>No IMU data</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="rawYawLabel">
+              <property name="text">
+               <string>Yaw</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="rawYawValueLabel">
+              <property name="text">
+               <string>No IMU data</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="correctedGroupBox">
+           <property name="title">
+            <string>Corrected RPY</string>
+           </property>
+           <layout class="QFormLayout" name="correctedFormLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="correctedRollLabel">
+              <property name="text">
+               <string>Roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="correctedRollValueLabel">
+              <property name="text">
+               <string>No IMU data</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="correctedPitchLabel">
+              <property name="text">
+               <string>Pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="correctedPitchValueLabel">
+              <property name="text">
+               <string>No IMU data</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="correctedYawLabel">
+              <property name="text">
+               <string>Yaw</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="correctedYawValueLabel">
+              <property name="text">
+               <string>No IMU data</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="offsetGroupBox">
+           <property name="title">
+            <string>Offsets</string>
+           </property>
+           <layout class="QVBoxLayout" name="offsetLayout">
+            <item>
+             <widget class="QLabel" name="offsetValueLabel">
+              <property name="text">
+               <string>Roll 0.0 / Pitch 0.0 / Yaw 0.0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item stretch="3">
+       <widget class="QGroupBox" name="visualGroupBox">
+        <property name="title">
+         <string>Attitude View</string>
+        </property>
+        <layout class="QGridLayout" name="visualLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="yawDialTitleLabel">
+           <property name="text">
+            <string>Yaw</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="pitchSliderTitleLabel">
+           <property name="text">
+            <string>Pitch</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" rowspan="2">
+          <widget class="QDial" name="yawDial">
+           <property name="minimumSize">
+            <size>
+             <width>260</width>
+             <height>260</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" rowspan="2">
+          <widget class="QSlider" name="pitchSlider">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>260</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <widget class="QLabel" name="rollSliderTitleLabel">
+           <property name="text">
+            <string>Roll</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="2">
+          <widget class="QSlider" name="rollSlider">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="buttonGroupBox">
+      <property name="title">
+       <string>Controls</string>
+      </property>
+      <layout class="QGridLayout" name="buttonLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="setYaw0Button">
+         <property name="text">
+          <string>Set Yaw 0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="setYaw180Button">
+         <property name="text">
+          <string>Set Yaw 180</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="setYaw90Button">
+         <property name="text">
+          <string>Set Yaw 90</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="setYawNeg90Button">
+         <property name="text">
+          <string>Set Yaw -90</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="QPushButton" name="setRollButton">
+         <property name="text">
+          <string>Set Roll</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" colspan="2">
+        <widget class="QPushButton" name="setPitchButton">
+         <property name="text">
+          <string>Set Pitch</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>920</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
